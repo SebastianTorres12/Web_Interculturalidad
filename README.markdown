@@ -13,7 +13,7 @@ API RestFul para un CRUD de libros con Java 17 y Payara 10. Entidad:
 
 ## RESOLUCIÓN DE CONFLICTOS DE MERGE
 - Usamos ramas en GitHub (`feature/nombre-tarea`) y pull requests.
-- Conflictos se resolvieron manualmente en VS Code/IntelliJ tras revisar PRs.
+- Conflictos se resolvieron manualmente en Netbeans 21.
 - Coordinamos en WhatsApp para evitar solapamientos.
 
 ## HERRAMIENTAS DE COMUNICACIÓN
@@ -21,4 +21,4 @@ API RestFul para un CRUD de libros con Java 17 y Payara 10. Entidad:
 - **GitHub**: Pull requests y comentarios para revisión de código.
 
 ## IMPACTO DE DIFERENCIAS DE HUSO HORARIO
-Las diferencias de huso horario podrían dificultar la programación de reuniones sincrónicas entre el equipo, ya que los horarios de trabajo no siempre coinciden. Sin embargo, esto permite trabajar en el proyecto de forma continua (24/7), ya que los miembros en diferentes zonas horarias pueden avanzar en sus tareas en momentos distintos, optimizando el tiempo de desarrollo.
+Las diferencias de huso horario podrían dificultarían la programación de reuniones sincrónicas entre el equipo, ya que los horarios de trabajo no siempre coinciden. Sin embargo, esto permite trabajar en el proyecto de forma continua (24/7), ya que los miembros en diferentes zonas horarias pueden avanzar en sus tareas en momentos distintos, optimizando el tiempo de desarrollo.
