@@ -1,40 +1,46 @@
-package ec.edu.monster.ws;
+ackage ec.edu.monster.ws;
 
-import ec.edu.monster.model.MovimientoModel;
-import ec.edu.monster.service.MovimientoService;
-import jakarta.ws.rs.Consumes;
-import jakarta.ws.rs.Produces;
-import jakarta.ws.rs.Path;
+import ec.edu.monster.model.LibroModel;
+import ec.edu.monster.service.LibroService;
+import jakarta.ws.rs.*;
 import jakarta.enterprise.context.RequestScoped;
-import jakarta.ws.rs.POST;
 import jakarta.ws.rs.core.MediaType;
 import java.sql.SQLException;
 import java.util.List;
 
-@Path("movimiento")
+@Path("libro")
 @RequestScoped
-public class MovimientoResource {
+public class LibroResource {
+    private final LibroService libroService = new LibroService();
 
-    public static class MovimientoRequest {
-        private String numcuenta;
-
-        public MovimientoRequest() {}
-
-        // Getters and setters
-        public String getNumcuenta() {
-            return numcuenta;
-        }
-
-        public void setNumcuenta(String numcuenta) {
-            this.numcuenta = numcuenta;
-        }
+    @GET
+    @Produces(MediaType.APPLICATION_JSON)
+    public List<LibroModel> getLibros() throws SQLException {
+        return libroService.obtenerLibros();
     }
-   
+
+    @GET
+    @Path("/{id}")
+    @Produces(MediaType.APPLICATION_JSON)
+    public LibroModel getLibroPorId(@PathParam("id") int id) throws SQLException {
+        return libroService.obtenerLibroPorId(id);
+    }
+
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
-    @Produces(MediaType.APPLICATION_JSON)
-    public List<MovimientoModel> getMovimientos(MovimientoRequest request) throws SQLException {
-        MovimientoService servicio = new MovimientoService();
-        return servicio.ObtenerMovimiento(request.getNumcuenta());
+    public void registrarLibro(LibroModel libro) throws SQLException {
+        libroService.registrarLibro(libro);
+    }
+
+    @PUT
+    @Consumes(MediaType.APPLICATION_JSON)
+    public void actualizarLibro(LibroModel libro) throws SQLException {
+        libroService.actualizarLibro(libro);
+    }
+
+    @DELETE
+    @Path("/{id}")
+    public void eliminarLibro(@PathParam("id") int id) throws SQLException {
+        libroService.eliminarLibro(id);
     }
 }
