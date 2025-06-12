@@ -1,4 +1,4 @@
-ackage ec.edu.monster.ws;
+package ec.edu.monster.ws;
 
 import ec.edu.monster.model.LibroModel;
 import ec.edu.monster.service.LibroService;
